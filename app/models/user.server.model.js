@@ -37,6 +37,10 @@ var UserSchema = new Schema({
 	salt: {
 		type: String
 	},
+    role: {
+        type: String,
+        default: 'user'
+    },
 	provider: {
 		type: String,
 		// Validate 'provider' value existance
