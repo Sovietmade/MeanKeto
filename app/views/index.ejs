@@ -1,23 +1,108 @@
+
+
 <!DOCTYPE html>
 <html xmlns:ng="http://angularjs.org">
 <head>
-	<!-- Use the 'title' property to render a page title  -->
-	<title><%= title %></title>
+<meta charset="utf-8">
+
+<!-- disable iPhone inital scale -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+<!-- Use the 'title' property to render a page title  -->
+<title><%= title %></title>
+
+<!-- main css -->
+<link href="content/style.css" rel="stylesheet" type="text/css">
+
+<!-- media queries css -->
+<link href="content/media-queries.css" rel="stylesheet" type="text/css">
+
+<!-- html5.js for IE less than 9 -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- css3-mediaqueries.js for IE less than 9 -->
+<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
 </head>
+
 <body>
+
+<div id="pagewrap">
+
+	<header id="header">
+
+
+		<nav id="menu">
+			 <ul>
+			  <li class="rocket"><a href="">Item menu 1</a></li>
+			  <li class="wine"><a href="">Item menu 2</a></li>
+			  <li class="burger"><a href="">Item menu 3</a></li>
+			  <li class="comment"><a href="">Item menu 4</a></li>
+			  <li class="sport" ><a href="">Item menu 5</a></li>
+			  <li class="earth"><a href="">Item menu 6</a></li>
+			  <div class="current">
+				<div class="top-arrow"></div>
+				<div class="current-back"></div>
+				<div class="bottom-arrow"></div>
+			  </div>
+			</ul>
+		</nav>
+
+
+	</header>
+	<!-- /#header -->
 	<!-- Render AngularJS views  -->
 	<section ng-view></section>
+
+
+
+	<aside id="sidebar">
+
+		<section class="widget">
+			<h4 class="widgettitle">Sidebar</h4>
+			<ul>
+				<li><a href="#">WordPress</a> (3)</li>
+				<li><a href="#">Design</a> (23)</li>
+				<li><a href="#">Design </a>(18)</li>
+			</ul>
+		</section>
+		<!-- /.widget -->
+
+		<section class="widget clearfix">
+			<h4 class="widgettitle">Flickr</h4>
+			<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8.&display=latest&size=s&layout=x&source=user&user=52839779@N02"></script>
+		</section>
+		<!-- /.widget -->
+
+	</aside>
+	<!-- /#sidebar -->
+
+	<footer id="footer">
+
+		<p>Tutorial by <a href="http://webdesignerwall.com">Web Designer Wall</a></p>
+
+	</footer>
+	<!-- /#footer -->
+
+</div>
+<!-- /#pagewrap -->
+
+
 
 	<!-- Render the user object -->
 	<script type="text/javascript">
 		window.user = <%- user || 'null' %>;
 	</script>
-	
+
 	<!-- Load local libraries -->
 	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
-	
+
 	<!-- Load the articles module -->
 	<script type="text/javascript" src="/articles/articles.client.module.js"></script>
 	<script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
